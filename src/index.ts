@@ -1,8 +1,7 @@
 import express, { Express } from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
-// We'll import routes later after we create them
-// import linkRoutes from './routes/linkRoutes';
+import linkRoutes from './routes/linkRoutes';
 
 dotenv.config();
 
@@ -14,8 +13,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Routes - we'll add these later
-// app.use('/', linkRoutes);
+// Routes
+app.use('/', linkRoutes);
 
 // Health check
 app.get('/health', (req, res) => {
